@@ -93,11 +93,11 @@ public void SendReport() {
 	
 
 	if (bDraw) {
-		Format(sWinTitle, sizeof(sWinTitle), "Match was a draw at %i:%i! - Match #%i", iTScore, iCTScore);
+		Format(sWinTitle, sizeof(sWinTitle), "Match was a draw at %i:%i! - Match #%d", iTScore, iCTScore, matchid);
 	} else if (iWinners == CS_TEAM_T) {
-		Format(sWinTitle, sizeof(sWinTitle), "%s just won %i:%i! - Match #%i", teamName1, iTScore, iCTScore);
+		Format(sWinTitle, sizeof(sWinTitle), "%s just won %i:%i! - Match #%d", teamName1, iTScore, iCTScore, matchid);
 	} else {
-		Format(sWinTitle, sizeof(sWinTitle), "%s just won %i:%i! - Match #%i", teamName2, iCTScore, iTScore);
+		Format(sWinTitle, sizeof(sWinTitle), "%s just won %i:%i! - Match #%d", teamName2, iCTScore, iTScore, matchid);
     }
 
 	json_object_set_new(jContentAuthor, "name", json_string(sWinTitle));
