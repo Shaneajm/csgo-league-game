@@ -21,9 +21,9 @@ ArrayList ga_sWinningPlayers;
 
 public Plugin myinfo = {
 	name = "[League] Match Result",
-	author = "The Doggy, B3none, PandahChan",
+	author = "The Doggy, B3none, PandahChan, ShaneAJM",
 	description = "Post the final score in Discord via Webhook",
-	version = "1.0.0",
+	version = "1.0.1",
 	url = "https://github.com/csgo-league"
 };
 
@@ -93,11 +93,11 @@ public void SendReport() {
 	
 
 	if (bDraw) {
-		Format(sWinTitle, sizeof(sWinTitle), "Match was a draw at %i:%i!", iTScore, iCTScore);
+		Format(sWinTitle, sizeof(sWinTitle), "Match was a draw at %i:%i! - Match #%i", iTScore, iCTScore);
 	} else if (iWinners == CS_TEAM_T) {
-		Format(sWinTitle, sizeof(sWinTitle), "%s just won %i:%i!", teamName1, iTScore, iCTScore);
+		Format(sWinTitle, sizeof(sWinTitle), "%s just won %i:%i! - Match #%i", teamName1, iTScore, iCTScore);
 	} else {
-		Format(sWinTitle, sizeof(sWinTitle), "%s just won %i:%i!", teamName2, iCTScore, iTScore);
+		Format(sWinTitle, sizeof(sWinTitle), "%s just won %i:%i! - Match #%i", teamName2, iCTScore, iTScore);
     }
 
 	json_object_set_new(jContentAuthor, "name", json_string(sWinTitle));
